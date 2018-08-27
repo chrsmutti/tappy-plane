@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://world/ground.gd" type="Script" id=1]
+[ext_resource path="res://world/ground.png" type="Texture" id=2]
+
+[node name="Ground" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 4
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( -370, 0, -360, 10, -310, 10, -270, 0, -250, -20, -250, -30, -150, -30, -100, -10, -50, -10, -20, -20, 30, -20, 70, 10, 100, 10, 130, 20, 170, 20, 200, -10, 230, -10, 250, -30, 340, -30, 360, -10, 400, 0, 410, 0, 410, 40, 260, 40, -410, 40, -410, 0 )
+
+[node name="Rocks" type="Node2D" parent="." index="2"]
+
+[node name="Position1" type="Node2D" parent="Rocks" index="0"]
+
+position = Vector2( 302, -118 )
+z_index = -1
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Position2" type="Node2D" parent="Rocks" index="1"]
+
+position = Vector2( 120, -60 )
+z_index = -1
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Position3" type="Node2D" parent="Rocks" index="2"]
+
+position = Vector2( -90, -110 )
+z_index = -1
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Position4" type="Node2D" parent="Rocks" index="3"]
+
+position = Vector2( -310, -100 )
+z_index = -1
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+
