@@ -17,10 +17,12 @@ config/icon="res://icon.png"
 [autoload]
 
 GameState="*res://world/game_state.gd"
+SFX="*res://world/sfx.gd"
 
 [display]
 
 window/size/width=800
+window/stretch/mode="2d"
 
 [importer_defaults]
 
@@ -53,4 +55,5 @@ reset=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"

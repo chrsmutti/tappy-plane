@@ -20,10 +20,17 @@ signal score_changed
 
 func _ready():
 	call_deferred("start_screen")
+	
 	timer = Timer.new()
 	timer.wait_time = 1
 	add_child(timer)
 	timer.connect("timeout", self, "countdown")
+	
+	var background_player = AudioStreamPlayer.new()
+	add_child(background_player)
+	background_player.set_stream(preload("res://world/background_music.ogg"))
+	background_player.set_volume_db(-25)
+	background_player.play()
 
 func set_state(state):
 	current_state = state
@@ -43,8 +50,10 @@ func countdown():
 		starting = false
 		timer.stop()
 		get_tree().call_group("game_start", "hide")
+		SFX.play(preload("res://ui/start.ogg"))
 	else:
 		get_tree().call_group("game_start", "set_timer", start_time)
+		SFX.play(preload("res://ui/count.ogg"))
 
 func get_state():
 	return current_state
@@ -62,7 +71,6 @@ func call_update():
 
 func update_environment_speed():
 	environment_speed = max(min(environment_speed * 1.1, MAX_ENV_SPEED), MIN_ENV_SPEED)
-	print(environment_speed)
 	get_tree().call_group("environment", "update_speed", environment_speed)
 
 func set_score(score):

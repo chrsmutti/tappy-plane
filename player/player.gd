@@ -25,6 +25,7 @@ func _physics_process(delta):
 func state_running(delta):	
 	if Input.is_action_just_pressed("tap"):
 		speed = -(MAX_FALL_SPEED)
+		SFX.play(preload("res://player/jump.ogg"))
 
 	speed = min(speed + MIN_FALL_SPEED, MAX_FALL_SPEED)
 	rotation_degrees = max(min(speed / MIN_FALL_SPEED, 45), -45)
