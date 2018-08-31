@@ -12,6 +12,7 @@ var current_score = 0
 var highest_score = 0
 var environment_speed = MIN_ENV_SPEED
 var starting = false
+var record = false
 var start_time = 0
 var timer
 
@@ -34,6 +35,8 @@ func _ready():
 
 func set_state(state):
 	current_state = state
+	if state == GameState.GAME_OVER:
+		get_tree().call_group("game_over", "show_game_over", current_score, highest_score, record)
 	
 func start():
 	if not starting:
@@ -59,6 +62,7 @@ func get_state():
 	return current_state
 
 func start_screen():
+	record = false
 	current_score = 0
 	environment_speed = 0
 	GameState.set_state(GameState.GAME_START)
@@ -75,7 +79,9 @@ func update_environment_speed():
 
 func set_score(score):
 	current_score = score
-	highest_score = max(highest_score, score)
+	if score > highest_score:
+		highest_score = score
+		record = true
 	call_update()
 	
 	if current_score % 5 == 0:

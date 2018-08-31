@@ -11,7 +11,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 400, 10 )
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -25,7 +25,6 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 800, 600 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Region", "Z Index" ]
 
 [node name="Bounds" type="StaticBody2D" parent="." index="2"]
 
@@ -54,5 +53,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Ground" parent="." index="3" instance=ExtResource( 4 )]
 
 [node name="UI" parent="." index="4" instance=ExtResource( 5 )]
+
+rect_min_size = Vector2( 800, 600 )
+_sections_unfolded = [ "Rect" ]
 
 
