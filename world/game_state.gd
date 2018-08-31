@@ -4,6 +4,11 @@ const GAME_START = "game_start"
 const RUNNING = "running"
 const GAME_OVER = "game_over"
 
+const BIOME_NONE = ""
+const BIOME_GRASS = "Grass"
+const BIOME_ICE = "Ice"
+const BIOME_SNOW = "Snow"
+
 const MAX_ENV_SPEED = 320
 const MIN_ENV_SPEED = 200
 
@@ -14,6 +19,7 @@ var environment_speed = MIN_ENV_SPEED
 var starting = false
 var record = false
 var start_time = 0
+var current_biome = BIOME_NONE
 var timer
 
 signal highest_score_changed
@@ -27,11 +33,30 @@ func _ready():
 	add_child(timer)
 	timer.connect("timeout", self, "countdown")
 	
+	var biome_timer = Timer.new()
+	biome_timer.wait_time = 30
+	add_child(biome_timer)
+	biome_timer.connect("timeout", self, "change_biome")
+	biome_timer.start()
+	change_biome()
+	
 	var background_player = AudioStreamPlayer.new()
 	add_child(background_player)
 	background_player.set_stream(preload("res://world/background_music.ogg"))
 	background_player.set_volume_db(-25)
 	background_player.play()
+
+func change_biome():
+	randomize()
+	match (randi() % 4):
+		0:
+			current_biome = BIOME_NONE
+		1:
+			current_biome = BIOME_GRASS
+		2:
+			current_biome = BIOME_ICE
+		3:
+			current_biome = BIOME_SNOW
 
 func set_state(state):
 	current_state = state

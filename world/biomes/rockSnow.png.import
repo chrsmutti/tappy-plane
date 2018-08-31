@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ground.png-c608bf6155e9183d02641226dd7099b0.stex"
+path="res://.import/rockSnow.png-051eb7dec58c5a4b6073716f82d004ef.stex"
 
 [deps]
 
-source_file="res://world/ground.png"
-dest_files=[ "res://.import/ground.png-c608bf6155e9183d02641226dd7099b0.stex" ]
+source_file="res://world/biomes/rockSnow.png"
+dest_files=[ "res://.import/rockSnow.png-051eb7dec58c5a4b6073716f82d004ef.stex" ]
 
 [params]
 

@@ -3,9 +3,10 @@ extends RigidBody2D
 const TYPE = "ground"
 var speed = 200
 var direction = Vector2(-1, 0)
-	
+
 func _ready():
 	add_to_group("environment")
+	$Sprite.set_texture(load(str("res://world/biomes/ground", GameState.current_biome, ".png")))
 
 func update_speed(new_speed):
 	speed = new_speed

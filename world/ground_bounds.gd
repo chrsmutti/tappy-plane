@@ -11,7 +11,7 @@ func destroy_ground(body):
 		
 func spawn_ground(body):
 	if body.get("TYPE") == "ground":
-		var ground_instance = preload("res://world/ground.tscn").instance()
+		var ground_instance = preload("res://world/biomes/ground.tscn").instance()
 		ground_instance.set_position(body.get_position() + Vector2(808, 0))
 		ground_instance.set_rotation(body.get_rotation())
 		ground_instance.speed = body.speed
@@ -32,7 +32,7 @@ func spawn_rocks(ground_instance):
 			
 			already_set.append(position)
 			var position_node = rocks_node.find_node(str("Position", position))
-			var rock_instance = preload("res://world/rock.tscn").instance()
+			var rock_instance = preload("res://world/biomes/rock.tscn").instance()
 			position_node.add_child(rock_instance)
 			
 			var player = get_parent().get_parent().find_node("Player")
