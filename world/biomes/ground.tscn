@@ -3,7 +3,7 @@
 [ext_resource path="res://world/biomes/ground.gd" type="Script" id=1]
 [ext_resource path="res://world/biomes/ground.png" type="Texture" id=2]
 
-[node name="Ground" type="RigidBody2D" index="0"]
+[node name="Ground" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 2
