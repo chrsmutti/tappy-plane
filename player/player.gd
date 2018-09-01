@@ -20,19 +20,26 @@ func _physics_process(delta):
 				$AnimationPlayer.play("running")
 			if Input.is_action_just_pressed("tap"):
 				GameState.start()
-			
+		GameState.PAUSED:
+			if Input.is_action_just_pressed("pause"):
+				GameState.unpause()
 
 func state_running(delta):	
 	if Input.is_action_just_pressed("tap"):
 		speed = -(MAX_FALL_SPEED)
 		SFX.play(preload("res://player/jump.ogg"))
+	
+	if Input.is_action_just_pressed("pause"):
+		GameState.set_state(GameState.PAUSED)
 
 	speed = min(speed + MIN_FALL_SPEED, MAX_FALL_SPEED)
 	rotation_degrees = max(min(speed / MIN_FALL_SPEED, 45), -45)
 	var collision = move_and_collide(DOWN * speed * delta)
 
 	if collision != null:
-		$AnimationPlayer.play("idle")
+		SFX.play(preload("res://player/explosion.ogg"), -5)
+		$AnimationPlayer.play("explosion")
+		get_node("../Camera2D").shake(1, 2.5)
 		GameState.set_state(GameState.GAME_OVER)
 		
 func on_player_scored():

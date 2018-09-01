@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/puffSmall.png-5fd08823a09251b3e2fff7610ba255cd.stex"
+path="res://.import/shake_off.png-505c68e689a133bbfb00cb8bef87b7f9.stex"
 
 [deps]
 
-source_file="res://player/puffSmall.png"
-dest_files=[ "res://.import/puffSmall.png-5fd08823a09251b3e2fff7610ba255cd.stex" ]
+source_file="res://ui/shake_off.png"
+dest_files=[ "res://.import/shake_off.png-505c68e689a133bbfb00cb8bef87b7f9.stex" ]
 
 [params]
 
@@ -26,4 +26,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=0.8
+svg/scale=1.0

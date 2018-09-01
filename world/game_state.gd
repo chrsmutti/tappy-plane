@@ -3,6 +3,7 @@ extends Node
 const GAME_START = "game_start"
 const RUNNING = "running"
 const GAME_OVER = "game_over"
+const PAUSED = "paused"
 
 const BIOME_NONE = ""
 const BIOME_GRASS = "Grass"
@@ -21,6 +22,10 @@ var record = false
 var start_time = 0
 var current_biome = BIOME_NONE
 var timer
+
+var sfx_enabled = true
+var audio_enabled = true
+var shake_enabled = true
 
 signal highest_score_changed
 signal score_changed
@@ -58,10 +63,15 @@ func change_biome():
 		3:
 			current_biome = BIOME_SNOW
 
+func unpause():
+	get_tree().call_group("pause_menu", "unpause")
+
 func set_state(state):
 	current_state = state
 	if state == GameState.GAME_OVER:
 		get_tree().call_group("game_over", "show_game_over", current_score, highest_score, record)
+	if state == GameState.PAUSED:
+		get_tree().call_group("pause_menu", "show_pause_menu")
 	
 func start():
 	if not starting:

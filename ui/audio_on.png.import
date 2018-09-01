@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/puffSmall.png-5fd08823a09251b3e2fff7610ba255cd.stex"
+path="res://.import/audio_on.png-eb4c28aa24703836d56de88e8c018c6b.stex"
 
 [deps]
 
-source_file="res://player/puffSmall.png"
-dest_files=[ "res://.import/puffSmall.png-5fd08823a09251b3e2fff7610ba255cd.stex" ]
+source_file="res://ui/audio_on.png"
+dest_files=[ "res://.import/audio_on.png-eb4c28aa24703836d56de88e8c018c6b.stex" ]
 
 [params]
 
@@ -26,4 +26,4 @@ process/HDR_as_SRGB=false
 stream=false
 size_limit=0
 detect_3d=false
-svg/scale=0.8
+svg/scale=1.0
