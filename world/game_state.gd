@@ -50,6 +50,8 @@ func _ready():
 	background_player.set_stream(preload("res://world/background_music.ogg"))
 	background_player.set_volume_db(-25)
 	background_player.play()
+	
+	highest_score = int(load_highest_score())
 
 func change_biome():
 	randomize()
@@ -70,6 +72,7 @@ func set_state(state):
 	current_state = state
 	if state == GameState.GAME_OVER:
 		get_tree().call_group("game_over", "show_game_over", current_score, highest_score, record)
+		save_highest_score(highest_score)
 	if state == GameState.PAUSED:
 		get_tree().call_group("pause_menu", "show_pause_menu")
 	
@@ -126,3 +129,18 @@ func reset():
 	get_tree().reload_current_scene()
 	call_deferred("start_screen")
 	
+func save_highest_score(content):
+	var file = File.new()
+	file.open("user://highest_score.dat", file.WRITE)
+	file.store_string(str(content))
+	file.close()
+
+func load_highest_score():
+	var file = File.new()
+	if (file.file_exists("user://highest_score.dat")):
+		file.open("user://highest_score.dat", file.READ)
+		var content = file.get_as_text()
+		file.close()
+		return content
+	else:
+		return "0"
