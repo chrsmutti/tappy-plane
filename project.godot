@@ -10,8 +10,9 @@ config_version=3
 
 [application]
 
-config/name="TappyPlane"
+config/name="Tappy Plane"
 run/main_scene="res://world/default.tscn"
+boot_splash/image="res://splash_screen.png"
 config/icon="res://icon.png"
 
 [autoload]
