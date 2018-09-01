@@ -22,6 +22,7 @@ var record = false
 var start_time = 0
 var current_biome = BIOME_NONE
 var timer
+var background_player
 
 var sfx_enabled = true
 var audio_enabled = true
@@ -45,13 +46,19 @@ func _ready():
 	biome_timer.start()
 	change_biome()
 	
-	var background_player = AudioStreamPlayer.new()
+	background_player = AudioStreamPlayer.new()
 	add_child(background_player)
 	background_player.set_stream(preload("res://world/background_music.ogg"))
 	background_player.set_volume_db(-25)
 	background_player.play()
 	
 	highest_score = int(load_highest_score())
+
+func _process(delta):
+	if not audio_enabled and background_player.is_playing():
+		background_player.stop()
+	elif audio_enabled and not background_player.is_playing():
+		background_player.play()
 
 func change_biome():
 	randomize()

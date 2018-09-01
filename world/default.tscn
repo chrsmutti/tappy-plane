@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 400, 10 )
+extents = Vector2( 458.765, 10 )
 
 [node name="World" type="Node" index="0"]
 
@@ -30,7 +30,6 @@ _sections_unfolded = [ "Region" ]
 
 [node name="Bounds" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -42,13 +41,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Top" type="CollisionShape2D" parent="Bounds" index="0"]
 
-position = Vector2( 400, -10 )
+position = Vector2( 445, -10 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bottom" type="CollisionShape2D" parent="Bounds" index="1"]
 
-position = Vector2( 400, 610 )
+position = Vector2( 445, 508 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
