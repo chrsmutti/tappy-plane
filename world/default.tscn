@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 400, 10 )
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -20,16 +20,17 @@ position = Vector2( 170, 260 )
 
 [node name="Background" type="Sprite" parent="." index="1"]
 
-position = Vector2( 400, 300 )
+position = Vector2( 448, 254 )
 z_index = -10
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 800, 600 )
+region_rect = Rect2( 0, 0, 920, 600 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Region" ]
 
 [node name="Bounds" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -57,12 +58,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="UI" parent="." index="4" instance=ExtResource( 5 )]
 
-rect_min_size = Vector2( 800, 600 )
-_sections_unfolded = [ "Rect" ]
-
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 
-position = Vector2( 400, 300 )
+position = Vector2( 448, 252 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -86,5 +84,6 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 

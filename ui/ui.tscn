@@ -208,22 +208,23 @@ modulate_color = Color( 0.371094, 0.362396, 0.362396, 1 )
 draw_center = true
 _sections_unfolded = [ "Modulate" ]
 
-[node name="UI" type="Control" index="0"]
+[node name="UI" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_min_size = Vector2( 896, 504 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
 
 [node name="Always" type="MarginContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -245,14 +246,13 @@ __meta__ = {
 
 [node name="Screen" type="VBoxContainer" parent="Always" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 780.0
-margin_bottom = 580.0
+margin_right = 876.0
+margin_bottom = 484.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -261,6 +261,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Mouse" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TopContainer" type="HBoxContainer" parent="Always/Screen" index="0"]
 
@@ -269,7 +272,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 772.0
+margin_right = 868.0
 margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -312,8 +315,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 615.0
-margin_right = 772.0
+margin_left = 711.0
+margin_right = 868.0
 margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -334,21 +337,24 @@ _sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="BottomContainer" type="Container" parent="Always/Screen" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 40.0
-margin_right = 772.0
-margin_bottom = 580.0
+margin_right = 868.0
+margin_bottom = 484.0
+rect_min_size = Vector2( 0, 100 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Button" type="Button" parent="Always/Screen/BottomContainer" index="0"]
 
@@ -356,9 +362,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -52.0
+margin_left = -50.0
 margin_top = -50.0
-margin_right = -2.0
 rect_min_size = Vector2( 50, 50 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -386,12 +391,8 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_styles" ]
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 790.0
-margin_bottom = 590.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -438,7 +439,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 editor/display_folded = true
 visible = false
-position = Vector2( 400, 90 )
+position = Vector2( 448, 90 )
 texture = ExtResource( 9 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
@@ -458,7 +459,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 editor/display_folded = true
 visible = false
-position = Vector2( 400, 180 )
+position = Vector2( 448, 180 )
 texture = ExtResource( 10 )
 hframes = 10
 frame = 5
@@ -477,6 +478,7 @@ blend_times = [  ]
 
 [node name="Pause" type="MarginContainer" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -490,9 +492,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 11 )
 _sections_unfolded = [ "Mouse" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="Pause" index="0"]
 
+editor/display_folded = true
 visible = false
 modulate = Color( 0, 0, 0, 0.464078 )
 anchor_left = 0.0
@@ -500,8 +506,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 800.0
-margin_bottom = 600.0
+margin_right = 896.0
+margin_bottom = 504.0
 rect_pivot_offset = Vector2( 400, 300 )
 rect_clip_content = false
 mouse_filter = 1
@@ -528,7 +534,7 @@ blend_times = [  ]
 [node name="PauseTitle" type="Sprite" parent="Pause" index="1"]
 
 visible = false
-position = Vector2( 400, 127.273 )
+position = Vector2( 448, 127.273 )
 scale = Vector2( 0.909091, 0.909091 )
 texture = ExtResource( 12 )
 __meta__ = {
@@ -537,21 +543,24 @@ __meta__ = {
 
 [node name="Container" type="Container" parent="Pause" index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 800.0
-margin_bottom = 600.0
+margin_right = 896.0
+margin_bottom = 504.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Mouse" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Music" type="Button" parent="Pause/Container" index="0"]
 
@@ -559,9 +568,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 245.0
+margin_left = 292.0
 margin_top = 200.0
-margin_right = 295.0
+margin_right = 342.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 1.2, 1.2 )
@@ -593,9 +602,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 355.0
+margin_left = 402.0
 margin_top = 200.0
-margin_right = 405.0
+margin_right = 452.0
 margin_bottom = 250.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 1.2, 1.2 )
@@ -628,9 +637,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 474.0
+margin_left = 529.0
 margin_top = 191.0
-margin_right = 524.0
+margin_right = 579.0
 margin_bottom = 241.0
 rect_min_size = Vector2( 50, 50 )
 rect_scale = Vector2( 1.2, 1.2 )
@@ -685,10 +694,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -80.0
-margin_top = -60.0
-margin_right = -80.0
-margin_bottom = -60.0
 rect_scale = Vector2( 1.2, 1.2 )
 rect_pivot_offset = Vector2( 400, 300 )
 rect_clip_content = false
@@ -699,6 +704,9 @@ size_flags_vertical = 1
 color = Color( 1, 1, 1, 1 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver/ColorRect" index="0"]
 
@@ -723,7 +731,7 @@ playback/speed = 1.0
 
 editor/display_folded = true
 visible = false
-position = Vector2( 400, 90 )
+position = Vector2( 448, 80 )
 texture = ExtResource( 19 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -743,13 +751,14 @@ _sections_unfolded = [ "Playback Options" ]
 
 editor/display_folded = true
 visible = false
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = 10.0
-margin_right = 802.0
-margin_bottom = 600.0
+margin_left = -448.0
+margin_top = 110.0
+margin_right = 448.0
+margin_bottom = 420.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -765,10 +774,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 196.0
-margin_top = 160.0
-margin_right = 596.0
-margin_bottom = 440.0
+margin_left = 248.0
+margin_top = 15.0
+margin_right = 648.0
+margin_bottom = 295.0
 rect_min_size = Vector2( 400, 280 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1038,13 +1047,13 @@ _sections_unfolded = [ "Transform" ]
 [node name="ButtonContainer" type="Container" parent="GameOver" index="4"]
 
 visible = false
-anchor_left = 0.0
+anchor_left = 0.5
 anchor_top = 0.0
-anchor_right = 0.0
+anchor_right = 0.5
 anchor_bottom = 0.0
-margin_left = 8.0
-margin_right = 800.0
-margin_bottom = 600.0
+margin_left = -448.0
+margin_right = 448.0
+margin_bottom = 504.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1052,6 +1061,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Mouse" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Button" type="Button" parent="GameOver/ButtonContainer" index="0"]
 
@@ -1059,12 +1071,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 302.0
-margin_top = 460.0
-margin_right = 502.0
-margin_bottom = 510.0
+margin_left = 360.0
+margin_top = 440.0
+margin_right = 560.0
+margin_bottom = 490.0
 rect_min_size = Vector2( 200, 50 )
-rect_pivot_offset = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 100, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
@@ -1086,6 +1098,6 @@ text = "Restart"
 flat = false
 align = 1
 script = ExtResource( 25 )
-_sections_unfolded = [ "Pause", "custom_styles" ]
+_sections_unfolded = [ "Pause", "Rect" ]
 
 

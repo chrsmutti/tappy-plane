@@ -12,7 +12,7 @@ func destroy_ground(body):
 func spawn_ground(body):
 	if body.get("TYPE") == "ground":
 		var ground_instance = preload("res://world/biomes/ground.tscn").instance()
-		ground_instance.set_position(body.get_position() + Vector2(808, 0))
+		ground_instance.set_position(body.get_position() + Vector2(1608, 0))
 		ground_instance.set_rotation(body.get_rotation())
 		ground_instance.speed = body.speed
 		get_parent().add_child(ground_instance)

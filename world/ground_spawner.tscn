@@ -3,7 +3,6 @@
 [ext_resource path="res://world/biomes/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/ground_bounds.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -13,16 +12,27 @@ extents = Vector2( 10, 10 )
 
 [node name="Ground" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 400, 580 )
+position = Vector2( 400, 494 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Ceiling" parent="." index="1" instance=ExtResource( 1 )]
+[node name="Ground2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 1208.06, 494 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Ceiling" parent="." index="2" instance=ExtResource( 1 )]
 
 position = Vector2( 400, 10 )
 rotation = 3.14159
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="GroundBounds" type="Area2D" parent="." index="2"]
+[node name="Ceiling2" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 1207.06, 10.0051 )
+rotation = 3.14159
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="GroundBounds" type="Area2D" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( -15, 300 )
@@ -45,6 +55,11 @@ __meta__ = {
 
 scale = Vector2( 1, 50 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Node2D" type="Node2D" parent="." index="5"]
+
+position = Vector2( 2008, 507 )
 _sections_unfolded = [ "Transform" ]
 
 

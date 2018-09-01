@@ -10,8 +10,8 @@ const BIOME_GRASS = "Grass"
 const BIOME_ICE = "Ice"
 const BIOME_SNOW = "Snow"
 
-const MAX_ENV_SPEED = 320
-const MIN_ENV_SPEED = 200
+const MAX_ENV_SPEED = 400
+const MIN_ENV_SPEED = 250
 
 var current_state = GAME_START
 var current_score = 0
