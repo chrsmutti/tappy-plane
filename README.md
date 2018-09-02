@@ -1,6 +1,6 @@
 # TappyPlane
 
-Tappy Plane is an arcade game where the objective is to avoid rocks and go as far as you can with 
+[Tappy Plane](https://chrsmutti.itch.io/tappy-plane) is an arcade game where the objective is to avoid rocks and go as far as you can with 
 your unbelievably unsafe plane. How many rocks can you avoid?
 
 Made with Godot as a learning experiment, code is experimental, not yet refactored. Went through
