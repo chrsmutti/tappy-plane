@@ -223,6 +223,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Always" type="MarginContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -244,6 +245,7 @@ __meta__ = {
 
 [node name="Screen" type="VBoxContainer" parent="Always" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -265,13 +267,12 @@ __meta__ = {
 
 [node name="TopContainer" type="HBoxContainer" parent="Always/Screen" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 868.0
-margin_bottom = 36.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -288,8 +289,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 214.0
-margin_bottom = 36.0
+margin_right = 159.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -298,14 +299,16 @@ size_flags_horizontal = 2
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "Hi-Score: 0"
 align = 2
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Size Flags" ]
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Score" type="Label" parent="Always/Screen/TopContainer" index="1"]
 
@@ -313,9 +316,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 711.0
+margin_left = 751.0
 margin_right = 868.0
-margin_bottom = 36.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -324,7 +327,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "Score: 0"
 align = 2
 valign = 1
@@ -339,7 +344,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 40.0
+margin_top = 46.0
 margin_right = 868.0
 margin_bottom = 484.0
 rect_min_size = Vector2( 0, 100 )
@@ -746,6 +751,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="PanelContainer" type="CenterContainer" parent="GameOver" index="3"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.0
@@ -762,19 +768,20 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
-_sections_unfolded = [ "Mouse", "Visibility" ]
+_sections_unfolded = [ "Visibility" ]
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GameOver/PanelContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 248.0
-margin_top = 15.0
+margin_top = 5.0
 margin_right = 648.0
-margin_bottom = 295.0
-rect_min_size = Vector2( 400, 280 )
+margin_bottom = 305.0
+rect_min_size = Vector2( 400, 300 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -793,7 +800,7 @@ anchor_bottom = 1.0
 margin_left = 25.0
 margin_top = 25.0
 margin_right = -9.0
-margin_bottom = -5.0
+margin_bottom = 15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -801,16 +808,17 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Margin", "Mouse" ]
+_sections_unfolded = [ "Margin", "Mouse", "Rect" ]
 
 [node name="ScoreContainer" type="HBoxContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 366.0
-margin_bottom = 36.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -826,8 +834,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 115.0
-margin_bottom = 36.0
+margin_right = 84.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -837,6 +845,9 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.564706, 0.505882, 0.360784, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "Score"
 percent_visible = 1.0
 lines_skipped = 0
@@ -849,9 +860,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 343.0
+margin_left = 347.0
 margin_right = 366.0
-margin_bottom = 36.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -861,6 +872,9 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.566406, 0.507808, 0.362854, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -870,13 +884,14 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Hi-ScoreContainer" type="HBoxContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 40.0
+margin_top = 46.0
 margin_right = 366.0
-margin_bottom = 76.0
+margin_bottom = 88.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -892,8 +907,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 172.0
-margin_bottom = 36.0
+margin_right = 126.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -903,6 +918,9 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.564706, 0.505882, 0.360784, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "Hi-Score"
 percent_visible = 1.0
 lines_skipped = 0
@@ -915,9 +933,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 343.0
+margin_left = 347.0
 margin_right = 366.0
-margin_bottom = 36.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -927,6 +945,9 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.564706, 0.505882, 0.360784, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -934,23 +955,23 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="NewHi-ScoreContainer" type="HBoxContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="2"]
+[node name="NewHi-ScoreContainer" type="CenterContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 80.0
+margin_top = 92.0
 margin_right = 366.0
-margin_bottom = 116.0
+margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor", "Mouse" ]
+use_top_left = false
+_sections_unfolded = [ "Anchor" ]
 
 [node name="NewHi-ScoreLabel" type="Label" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer/NewHi-ScoreContainer" index="0"]
 
@@ -958,8 +979,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 360.0
-margin_bottom = 36.0
+margin_left = 183.0
+margin_right = 183.0
+margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -968,14 +990,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.784314, 0.243137, 0.243137, 1 )
-custom_colors/font_color_shadow = Color( 0.113281, 0.113281, 0.113281, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
 align = 1
 valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 8 )
-_sections_unfolded = [ "Mouse", "Visibility" ]
+_sections_unfolded = [ "Mouse", "custom_colors", "custom_constants" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer/NewHi-ScoreContainer/NewHi-ScoreLabel" index="0"]
 
@@ -989,13 +1013,14 @@ blend_times = [  ]
 
 [node name="CenterContainer" type="CenterContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 120.0
+margin_top = 138.0
 margin_right = 100.0
-margin_bottom = 220.0
+margin_bottom = 238.0
 rect_min_size = Vector2( 100, 100 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1067,9 +1092,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 360.0
-margin_top = 440.0
+margin_top = 420.0
 margin_right = 560.0
-margin_bottom = 490.0
+margin_bottom = 470.0
 rect_min_size = Vector2( 200, 50 )
 rect_pivot_offset = Vector2( 100, 0 )
 rect_clip_content = false

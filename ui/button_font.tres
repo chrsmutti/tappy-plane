@@ -1,12 +1,14 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://ui/kenvector_future_thin.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/BalooTammudu-Regular.ttf" type="DynamicFontData" id=1]
 
 [resource]
 
 size = 32
-use_mipmaps = false
-use_filter = false
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -10
+extra_spacing_bottom = -20
 font_data = ExtResource( 1 )
-_sections_unfolded = [ "Font", "Settings" ]
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 

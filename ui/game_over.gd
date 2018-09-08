@@ -21,8 +21,8 @@ func show_game_over(score, highest_score, record):
 		if child.has_method("start_animation"):
 			child.start_animation()
 	
-	get_node("Tween").interpolate_method(self, "set_score", 0, score, 1, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
-	get_node("Tween").interpolate_method(self, "set_highest_score", 0, highest_score, 1, Tween.TRANS_EXPO, Tween.EASE_IN_OUT)
+	get_node("Tween").interpolate_method(self, "set_score", 0, score, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
+	get_node("Tween").interpolate_method(self, "set_highest_score", 0, highest_score, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
 	get_node("Tween").start()
 	
 	if record:
