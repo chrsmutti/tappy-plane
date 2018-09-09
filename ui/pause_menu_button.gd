@@ -2,9 +2,8 @@ extends Control
 
 export(String, "audio", "sfx", "shake") var enable_type
 
-var styles = ["hover", "pressed", "focus", "disabled", "normal"]
-onready var texture_on = load(str("res://ui/", enable_type, "_on.png"))
-onready var texture_off = load(str("res://ui/", enable_type, "_off.png"))
+export (Color) var enabled = Color("#fff")
+export (Color) var disabled = Color("#323232")
 
 func _ready():
 	set_mouse_filter(MOUSE_FILTER_STOP)
@@ -12,7 +11,7 @@ func _ready():
 	_change_styles()
 
 func handle_input(ev):
-	if ev.is_action_pressed("tap") and GameState.get_state() == GameState.PAUSED:
+	if ev.is_action_pressed("tap"):
 		_on_button_pressed()
 		get_tree().set_input_as_handled()
 
@@ -21,8 +20,9 @@ func _on_button_pressed():
 	_change_styles()
 
 func _change_styles():
-	for style in styles:
-		if (GameState.get(str(enable_type, "_enabled"))):
-			self.get(str("custom_styles/", style)).set_texture(texture_on)
-		else:
-			self.get(str("custom_styles/", style)).set_texture(texture_off)
+	if (GameState.get(str(enable_type, "_enabled"))):
+		get_node("Status/Container/On").set_modulate(enabled)
+		get_node("Status/Container/Off").set_modulate(disabled)
+	else:
+		get_node("Status/Container/Off").set_modulate(enabled)
+		get_node("Status/Container/On").set_modulate(disabled)

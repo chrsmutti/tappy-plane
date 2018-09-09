@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Container
 
 func _ready():
     add_to_group("pause_menu")
@@ -20,7 +20,6 @@ func unpause():
     GameState.call_deferred("set_state", GameState.RUNNING)
 
 func show_pause_menu():
+    $Background.visible = true
     $Container.visible = true
-    $PauseTitle.visible = true
-    $ColorRect.visible = true
-    $ColorRect.start_animation()
+    $Background.start_animation()

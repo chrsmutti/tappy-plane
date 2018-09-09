@@ -26,10 +26,10 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 920, 600 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Region" ]
 
 [node name="Bounds" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
