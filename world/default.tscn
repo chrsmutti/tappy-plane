@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 458.765, 10 )
 
-[node name="World" type="Node"]
+[node name="World" type="Node" index="0"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -26,6 +26,17 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 920, 600 )
 script = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+night_color = Color( 0.734375, 0.734375, 0.734375, 1 )
+
+[node name="Tween" type="Tween" parent="Background" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [node name="Bounds" type="StaticBody2D" parent="." index="2"]
 

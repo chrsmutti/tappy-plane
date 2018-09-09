@@ -5,8 +5,15 @@ const MIN_FALL_SPEED = 10
 const MAX_FALL_SPEED = 400
 const TYPE = "player"
 
+onready var texture_names = ["red", "yellow", "green", "blue"]
 var score = 0
 var speed = MIN_FALL_SPEED
+
+func _ready():
+	if (texture_names != null and not texture_names.empty()):
+		randomize()
+		var selected = randi() % texture_names.size()
+		$Sprite.set_texture(load(str("res://player/", texture_names[selected], ".png")))
 
 func _physics_process(delta):
 	match GameState.get_state():

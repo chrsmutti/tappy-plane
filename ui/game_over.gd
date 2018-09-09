@@ -40,11 +40,11 @@ func show_children():
 		medal.visible = true
 		medal.set_frame(1)
 		medal.start_animation()
-	elif score > 10 and score >= (highest_score * 0.8):
+	elif score > 10 and score >= (highest_score * 0.75):
 		medal.visible = true
 		medal.set_frame(2)
 		medal.start_animation()
-	elif score > 5 and score >= (highest_score * 0.7):
+	elif score > 5 and score >= (highest_score * 0.5):
 		medal.visible = true
 		medal.set_frame(0)
 		medal.start_animation()
