@@ -15,6 +15,17 @@ func hide():
 			child.on_hide()
 
 func show_game_over(score, highest_score, record):
+	if record:
+		find_node("NewHi-ScoreLabel").start_animation()
+		get_tree().call_group("player_name", "show")
+	else:
+		show_children()
+
+func show_children():
+	var score = GameState.current_score
+	var highest_score = GameState.highest_score
+	var record = GameState.record
+
 	button.set_disabled(false)
 	for child in get_children():
 		child.visible = true
@@ -24,9 +35,6 @@ func show_game_over(score, highest_score, record):
 	get_node("Tween").interpolate_method(self, "set_score", 0, score, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
 	get_node("Tween").interpolate_method(self, "set_highest_score", 0, highest_score, 1, Tween.TRANS_EXPO, Tween.EASE_IN)
 	get_node("Tween").start()
-	
-	if record:
-		find_node("NewHi-ScoreLabel").start_animation()
 		
 	if score > 15 and score >= (highest_score * 0.9):
 		medal.visible = true

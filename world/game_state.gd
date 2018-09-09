@@ -23,6 +23,12 @@ var start_time = 0
 var current_biome = BIOME_NONE
 var timer
 var background_player
+var waiting_for_name = false
+
+var top_player = ""
+var current_player = "Player"
+
+var data = {}
 
 var sfx_enabled = true
 var audio_enabled = true
@@ -51,8 +57,9 @@ func _ready():
 	background_player.set_stream(preload("res://world/background_music.ogg"))
 	background_player.set_volume_db(-25)
 	background_player.play()
-	
-	highest_score = int(load_highest_score())
+
+	load_highest_score()
+	highest_score = data['record']['value']
 
 func _process(delta):
 	if not audio_enabled and background_player.is_playing():
@@ -79,7 +86,6 @@ func set_state(state):
 	current_state = state
 	if state == GameState.GAME_OVER:
 		get_tree().call_group("game_over", "show_game_over", current_score, highest_score, record)
-		save_highest_score(highest_score)
 	if state == GameState.PAUSED:
 		get_tree().call_group("pause_menu", "show_pause_menu")
 	
@@ -116,7 +122,7 @@ func start_screen():
 	get_tree().call_group("game_start", "show_game_start")
 
 func call_update():
-	get_tree().call_group("score", "update_scores", current_score, highest_score)
+	get_tree().call_group("score", "update_scores", current_score, highest_score, top_player)
 
 func update_environment_speed():
 	environment_speed = max(min(environment_speed * 1.1, MAX_ENV_SPEED), MIN_ENV_SPEED)
@@ -125,6 +131,7 @@ func update_environment_speed():
 func set_score(score):
 	current_score = score
 	if score > highest_score:
+		top_player = "You"
 		highest_score = score
 		record = true
 	call_update()
@@ -135,19 +142,38 @@ func set_score(score):
 func reset():
 	get_tree().reload_current_scene()
 	call_deferred("start_screen")
+
+func save_highest_score(name):
+	current_player = name
+	top_player = name
 	
-func save_highest_score(content):
+	data = {
+		'current_player': current_player,
+		'record': {
+			'value': highest_score,
+			'player': top_player
+		}
+	}
+
 	var file = File.new()
-	file.open("user://highest_score.dat", file.WRITE)
-	file.store_string(str(content))
+	file.open("user://savedata.dat", file.WRITE)
+	file.store_var(data)
 	file.close()
 
 func load_highest_score():
 	var file = File.new()
-	if (file.file_exists("user://highest_score.dat")):
-		file.open("user://highest_score.dat", file.READ)
-		var content = file.get_as_text()
-		file.close()
-		return content
+	if (file.file_exists("user://savedata.dat")):
+		file.open("user://savedata.dat", file.READ)
+		data = file.get_var()
+
+		current_player = data['current_player']
+		highest_score = data['record']['value']
+		top_player = data['record']['player']
 	else:
-		return "0"
+		data = {
+			'current_player': "Player",
+			'record': {
+				'value': 0,
+				'player': ""
+			}
+		}

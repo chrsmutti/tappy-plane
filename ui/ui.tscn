@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://ui/score_container.gd" type="Script" id=1]
 [ext_resource path="res://ui/ui_font.tres" type="DynamicFont" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://ui/pause_menu.gd" type="Script" id=19]
 [ext_resource path="res://ui/pause_title.png" type="Texture" id=20]
 [ext_resource path="res://ui/pause_menu_button.gd" type="Script" id=21]
+[ext_resource path="res://ui/player_name_container.gd" type="Script" id=22]
+[ext_resource path="res://ui/name_textfield.tres" type="StyleBox" id=23]
+[ext_resource path="res://ui/save_button.tres" type="StyleBox" id=24]
+[ext_resource path="res://ui/save_name_button.gd" type="Script" id=25]
 
 [sub_resource type="Animation" id=1]
 
@@ -79,7 +83,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -97,7 +101,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0.196078 ), Color( 0, 0, 0, 0.790039 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 1.0
 loop = false
@@ -115,7 +119,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 length = 0.5
 loop = true
@@ -127,13 +131,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "New highest score!", "" ]
+"values": [ "", "New Record!" ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -163,7 +167,7 @@ tracks/1/keys = {
 "values": [ 160.0, 0.0 ]
 }
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=8]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -182,6 +186,25 @@ expand_margin_bottom = 0.0
 modulate_color = Color( 0.371094, 0.362396, 0.362396, 1 )
 draw_center = true
 _sections_unfolded = [ "Modulate" ]
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "ui_animation"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.196078 ), Color( 0, 0, 0, 0.790039 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 
@@ -219,7 +242,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Always" type="MarginContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -241,7 +263,6 @@ __meta__ = {
 
 [node name="Screen" type="VBoxContainer" parent="Always" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -524,7 +545,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ui_animation = SubResource( 5 )
+anims/ui_animation = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Tween" type="Tween" parent="GameOver" index="1"]
@@ -552,7 +573,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ui_animation = SubResource( 6 )
+anims/ui_animation = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -600,6 +621,7 @@ _sections_unfolded = [ "Mouse", "Rect" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOver/PanelContainer/NinePatchRect" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -764,6 +786,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="NewHi-ScoreContainer" type="CenterContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -815,7 +838,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ui_animation = SubResource( 7 )
+anims/ui_animation = SubResource( 6 )
 blend_times = [  ]
 
 [node name="CenterContainer" type="CenterContainer" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer" index="3"]
@@ -857,7 +880,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ui_animation = SubResource( 8 )
+anims/ui_animation = SubResource( 7 )
 blend_times = [  ]
 
 [node name="MedalMark" type="Sprite" parent="GameOver/PanelContainer/NinePatchRect/VBoxContainer/CenterContainer" index="1"]
@@ -911,7 +934,7 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/hover = ExtResource( 15 )
-custom_styles/pressed = SubResource( 9 )
+custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = ExtResource( 15 )
 custom_styles/disabled = ExtResource( 15 )
 custom_styles/normal = ExtResource( 15 )
@@ -929,6 +952,7 @@ _sections_unfolded = [ "Pause", "Rect" ]
 
 [node name="Pause" type="CenterContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -975,7 +999,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/ui_animation = SubResource( 10 )
+anims/ui_animation = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Container" type="VBoxContainer" parent="Pause" index="1"]
@@ -1415,5 +1439,182 @@ text = "Off"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="PlayerName" type="CenterContainer" parent="." index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+use_top_left = false
+script = ExtResource( 22 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Background" type="ColorRect" parent="PlayerName" index="0"]
+
+editor/display_folded = true
+visible = false
+modulate = Color( 0, 0, 0, 0.872941 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 896.0
+margin_bottom = 504.0
+rect_min_size = Vector2( 896, 504 )
+rect_pivot_offset = Vector2( 400, 300 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 1 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerName/Background" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/ui_animation = SubResource( 10 )
+blend_times = [  ]
+
+[node name="Container" type="VBoxContainer" parent="PlayerName" index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 298.0
+margin_top = 168.0
+margin_right = 598.0
+margin_bottom = 336.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Label" type="Label" parent="PlayerName/Container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_right = 229.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.953125, 0.972534, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Your Name"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Name" type="LineEdit" parent="PlayerName/Container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 46.0
+margin_right = 300.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 300, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/read_only = ExtResource( 23 )
+custom_styles/focus = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.242188, 0.242188, 0.242188, 1 )
+text = "Player"
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="Splitter" type="Container" parent="PlayerName/Container" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 112.0
+margin_right = 300.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 0, 10 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button" type="Button" parent="PlayerName/Container" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 126.0
+margin_right = 300.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 24 )
+custom_styles/focus = ExtResource( 24 )
+custom_styles/disabled = ExtResource( 24 )
+custom_styles/normal = ExtResource( 24 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+script = ExtResource( 25 )
+_sections_unfolded = [ "Mouse" ]
 
 

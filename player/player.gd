@@ -13,7 +13,7 @@ func _physics_process(delta):
 		GameState.RUNNING:
 			state_running(delta)
 		GameState.GAME_OVER:
-			if Input.is_action_just_pressed("reset"):
+			if Input.is_action_just_pressed("reset") and not GameState.waiting_for_name:
 				GameState.reset()
 		GameState.GAME_START:
 			if $AnimationPlayer.current_animation != "running":
